@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>岩牡蠣・サザエ 料金一覧 | 幸丸水産</title>
+    <title>岩牡蠣 料金一覧 | 幸丸水産</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
@@ -19,10 +20,10 @@
         .logo-link { text-decoration: none; font-size: 1.3rem; font-weight: 700; color: #0b2545; letter-spacing: 0.15em; }
         .back-link { text-decoration: none; color: #134074; font-size: 0.9rem; font-weight: bold; }
 
-        section { padding: 60px 0 100px 0; border-bottom: 1px solid #eef2f5; }
-        .page-title-area { text-align: center; margin-bottom: 50px; }
+        section { padding: 40px 0 80px 0; }
+        .page-title-area { text-align: center; margin-bottom: 40px; }
         .page-title { font-size: 2.2rem; color: #0b2545; margin-bottom: 10px; }
-        .intro-text { text-align: center; color: #5c6b73; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; }
+        .intro-text { text-align: center; color: #5c6b73; max-width: 700px; margin: 0 auto 30px auto; font-size: 0.95rem; }
 
         .table-wrapper { background: #fff; padding: 30px; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); margin-bottom: 40px; overflow-x: auto; }
         .table-title { font-size: 1.3rem; color: #134074; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #134074; font-weight: 700; }
@@ -31,6 +32,10 @@
         th, td { border: 1px solid #cbd5e1; padding: 15px; }
         th { background-color: #f1f5f9; color: #0b2545; font-weight: 700; }
         td.left { text-align: left; font-weight: bold; background-color: #f8fafc; color: #0b2545; }
+        
+        /* 写真通りの点線再現 */
+        tr.dotted-border td { border-bottom: 2px dotted #cbd5e1; }
+        
         .price-text { font-weight: bold; color: #0b2545; }
         .weight-text { font-size: 0.85rem; color: #627d98; font-weight: normal; display: block; margin-top: 4px; }
         
@@ -38,7 +43,7 @@
         .notice-box h4 { font-size: 1rem; color: #0b2545; margin-bottom: 5px; }
         .notice-box p { font-size: 0.85rem; color: #486581; }
 
-        .footer-note-btn { text-align: center; margin-top: 50px; }
+        .footer-note-btn { text-align: center; margin-top: 40px; }
         .btn-contact { display: inline-block; background-color: #134074; color: #fff; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
         .btn-contact:hover { background-color: #0b2545; }
 
@@ -56,8 +61,8 @@
 
     <section class="container">
         <div class="page-title-area">
-            <h1 class="page-title serif">隠岐の岩牡蠣 料金表</h1>
-            <p class="intro-text">数年かけてじっくり育った極上の岩牡蠣。身の大きさと濃厚クリーミーな味わいを産地直送でお届けします。</p>
+            <h1 class="page-title serif">岩牡蠣 料金表</h1>
+            <p class="intro-text">生食用（殻付）</p>
         </div>
 
         <div class="table-wrapper">
@@ -65,51 +70,51 @@
             <table>
                 <thead>
                     <tr>
-                        <th>サイズ（1個あたりの重さ目安）</th>
+                        <th>サイズ</th>
                         <th>個数</th>
-                        <th>通常価格（貝のみ）</th>
-                        <th>牡蠣メスセット付き価格</th>
+                        <th>通常（貝のみ）</th>
+                        <th>牡蠣メスセット付</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="left">
-                            2Lサイズ（特大）
-                            <span class="weight-text">※1個あたり 350g 〜</span>
+                            2L（大）
+                            <span class="weight-text">350g 〜</span>
                         </td>
-                        <td>10個入り</td>
+                        <td>10個</td>
                         <td class="price-text">8,500円</td>
                         <td class="price-text">9,000円</td>
                     </tr>
                     <tr>
                         <td class="left" rowspan="2">
-                            Lサイズ（大）
-                            <span class="weight-text">※1個あたり 280g 〜 350g</span>
+                            L（中）
+                            <span class="weight-text">280g 〜 350g</span>
                         </td>
-                        <td>10個入り</td>
+                        <td>10個</td>
                         <td class="price-text">6,500円</td>
                         <td class="price-text">7,000円</td>
                     </tr>
                     <tr>
-                        <td>5個入り</td>
+                        <td>5個</td>
                         <td class="price-text">3,500円</td>
-                        <td class="price-text">4,000元</td>
+                        <td class="price-text">4,000円</td>
                     </tr>
-                    <tr>
+                    <tr class="dotted-border">
                         <td class="left">
-                            Mサイズ（中）
-                            <span class="weight-text">※1個あたり 200g 〜 280g</span>
+                            M（小）
+                            <span class="weight-text">200g 〜 280g</span>
                         </td>
-                        <td>10個入り</td>
+                        <td>10個</td>
                         <td class="price-text">4,500円</td>
                         <td class="price-text">5,000円</td>
                     </tr>
                     <tr>
                         <td class="left">
-                            Sサイズ（小）
-                            <span class="weight-text">※1個あたり 150g 〜 200g</span>
+                            S
+                            <span class="weight-text">150g 〜 200g</span>
                         </td>
-                        <td>10個入り</td>
+                        <td>10個</td>
                         <td class="price-text">3,500円</td>
                         <td class="price-text">4,000円</td>
                     </tr>
@@ -118,7 +123,7 @@
 
             <div class="notice-box">
                 <h4>💡 牡蠣メスセットとは？</h4>
-                <p>届いてすぐに岩牡蠣をお楽しみいただけるよう、<strong>【特製牡蠣剥きメス 1本 ＋ 軍手 ＋ わかりやすい剥き方解説チラシ】</strong>を同梱した便利なセットです。初めて購入される方にはメスセット付きが非常におすすめです！</p>
+                <p>届いてすぐに岩牡蠣をお楽しみいただけるよう、<strong>【特製牡蠣剥きメス 1本 ＋ 軍手 ＋ わかりやすい剥き方解説チラシ】</strong>を同梱した便利なセットです。</p>
             </div>
         </div>
 
@@ -151,37 +156,8 @@
                 </tbody>
             </table>
         </div>
-    </section>
-
-    <section id="sazae-section" class="container">
-        <div class="page-title-area">
-            <h1 class="page-title serif">活きサザエ 料金表</h1>
-            <p class="intro-text">波の荒い隠岐の海で育ち、角がゴツゴツと逞しく発達した天然サザエ。抜群の鮮度で、お刺身や壺焼きに最高です。</p>
-        </div>
-
-        <div class="table-wrapper">
-            <h3 class="table-title serif">■ サザエ価格・目安（税込）</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>内容量</th>
-                        <th>通常価格</th>
-                        <th>備考</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="left">サザエ詰め合わせ (1kg〜)</td>
-                        <td class="price-text">2,000円 〜</td>
-                        <td>ご予算・ご希望の個数（大きめ・小さめ等）に合わせて柔軟に調整いたします。</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">※送料は上記「岩牡蠣のクール便送料一律テーブル」と同じ料金が適用されます。</p>
-        </div>
 
         <div class="footer-note-btn">
-            <p style="margin-bottom: 20px; font-weight: bold; color: #0b2545;">ご注文や内容量のご相談は、トップページのお問合せよりお気軽にどうぞ！</p>
             <a href="index.html#contact" class="btn-contact serif">注文・相談フォームへ進む</a>
         </div>
     </section>
