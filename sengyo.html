@@ -6,13 +6,13 @@
     <title>季節の鮮魚一覧 | 幸丸水産</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght=500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans JP', sans-serif; color: #2c3e50; line-height: 1.9; background-color: #fafbfc; padding-top: 100px; }
         .serif { font-family: 'Noto Serif JP', serif; }
-        .container { width: 88%; max-width: 1000px; margin: 0 auto; }
+        .container { width: 88%; max-width: 1100px; margin: 0 auto; }
         
         header { background-color: #fff; position: fixed; width: 100%; top: 0; left: 0; z-index: 100; border-bottom: 1px solid #eef2f5; padding: 20px 0; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
@@ -20,24 +20,22 @@
         .back-link { text-decoration: none; color: #134074; font-size: 0.9rem; font-weight: bold; }
 
         .banner-wrap { width: 100%; height: 350px; overflow: hidden; margin-bottom: 50px; position: relative; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .banner-img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .banner-img { width: 100%; height: 100%; object-fit: cover; }
         .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)); display: flex; align-items: flex-end; padding: 40px; }
         .banner-title { color: #fff; font-size: 2.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
-        /* 重要：要相談の注意書きボックス */
         .consult-notice-box { background-color: #fff5f5; border: 1px solid #feb2b2; border-left: 5px solid #e53e3e; padding: 25px; margin-bottom: 60px; border-radius: 4px; }
-        .consult-notice-box h3 { color: #9b2c2c; margin-bottom: 10px; font-size: 1.15rem; display: flex; align-items: center; }
+        .consult-notice-box h3 { color: #9b2c2c; margin-bottom: 10px; font-size: 1.15rem; }
         .consult-notice-box p { font-size: 0.9rem; color: #742a2a; }
 
-        .fish-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
-        .fish-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; }
-        .fish-card:hover { transform: translateY(-4px); }
-        .fish-img-wrap { flex: 1; max-width: 350px; min-height: 250px; background-color: #f1f5f9; }
+        /* 魚が多いため2列で見やすく整列 */
+        .fish-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .fish-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+        .fish-img-wrap { flex: 1; max-width: 180px; background-color: #f1f5f9; }
         .fish-img { width: 100%; height: 100%; object-fit: cover; }
-        .fish-info { flex: 1.5; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
-        .fish-name { font-size: 1.5rem; color: #0b2545; margin-bottom: 5px; font-weight: 700; }
-        .fish-meta { font-size: 0.8rem; color: #627d98; margin-bottom: 15px; letter-spacing: 0.05em; }
-        .fish-desc { font-size: 0.95rem; color: #486581; text-align: justify; }
+        .fish-info { flex: 2; padding: 20px; display: flex; flex-direction: column; justify-content: center; }
+        .fish-name { font-size: 1.25rem; color: #0b2545; margin-bottom: 5px; font-weight: 700; }
+        .fish-desc { font-size: 0.85rem; color: #486581; text-align: justify; line-height: 1.7; }
 
         .footer-note-btn { text-align: center; margin-top: 60px; padding: 40px 0; border-top: 1px solid #eef2f5; }
         .btn-contact { display: inline-block; background-color: #134074; color: #fff; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
@@ -47,9 +45,9 @@
         
         @media (max-width: 768px) {
             .banner-wrap { height: 200px; }
-            .banner-title { font-size: 1.8rem; }
+            .fish-grid { grid-template-columns: 1fr; }
             .fish-card { flex-direction: column; }
-            .fish-img-wrap { max-width: 100%; height: 200px; min-height: auto; }
+            .fish-img-wrap { max-width: 100%; height: 150px; }
         }
     </style>
 </head>
@@ -66,57 +64,141 @@
         <div class="banner-wrap">
             <img src="スクリーンショット 2026-06-17 005911.png" alt="隠岐の新鮮な地魚" class="banner-img">
             <div class="banner-overlay">
-                <h1 class="banner-title serif">季節の鮮魚</h1>
+                <h1 class="banner-title serif">季節の鮮魚・島根の地魚</h1>
             </div>
         </div>
 
         <div class="consult-notice-box">
             <h3 class="serif">⚠️ 鮮魚のご注文に関する大切なお願い</h3>
-            <p>幸丸水産では、作り置きや一斉捕獲ではなく、その日の朝に一本釣りなどで獲れた「本当に鮮度の良い地魚」だけを厳選してお届けしております。そのため、海の状態や季節の変わり目の水揚げ状況により、<strong>決まった日時にお届けできるか確約が難しい場合</strong>がございます。お申し込みの際は、ご希望の納期や内容について事前にしっかりご相談・ご調整をさせていただきますので、まずは安心してお気軽にお問い合わせください。</p>
+            <p>幸丸水産では、その日の朝に水揚げされた「一番鮮度の良い状態」の地魚をお届けしております。そのため、海の状態や季節の変わり目の水揚げ状況により、<strong>お届け日や内容は要相談</strong>とさせていただいております。まずはご予算やご希望をお気軽にお知らせください。</p>
         </div>
 
         <div class="fish-grid">
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="buri.png" alt="ブリ（マルゴ・ハマチ）" class="fish-img">
-                </div>
+                <div class="fish-img-wrap"><img src="hira.png" alt="ヒラ" class="fish-img"></div>
                 <div class="fish-info">
-                    <h2 class="fish-name serif">ブリ（マルゴ・ハマチ）</h2>
-                    <div class="fish-meta">旬の時期：冬〜春 / 主な調理法：お刺身、照り焼き、ブリしゃぶ</div>
-                    <p class="fish-desc">対馬暖流に揉まれて引き締まった隠岐のブリは、格別の脂の乗りとしっかりとした歯ごたえが特徴です。成長段階に合わせて呼び名が変わる縁起の良い出世魚。丸ごと一本はもちろん、扱いやすい形でのご用意もご相談に応じます。</p>
+                    <h2 class="fish-name serif">ヒラ</h2>
+                    <p class="fish-desc">小骨が多い魚ですが、丁寧な骨切りを施すことで、極上の旨味と上品な脂の甘みが味わえる隠れた名魚です。お刺身や煮付けで深く愛されています。</p>
                 </div>
             </div>
 
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="tai.png" alt="タイ" class="fish-img">
-                </div>
+                <div class="fish-img-wrap"><img src="hirusu.png" alt="ヒラス" class="fish-img"></div>
                 <div class="fish-info">
-                    <h2 class="fish-name serif">タイ</h2>
-                    <div class="fish-meta">旬の時期：春〜秋 / 主な調理法：お刺身、塩焼き、鯛めし</div>
-                    <p class="fish-desc">美しい桜色の魚体と、上品で奥深い白身の旨味が特徴の天然マダイです。隠岐の清らかな海、そして豊富なエサを食べて育つため、身の甘みが非常に強く、お祝いの席の主役としてはもちろん、日々の食卓を贅沢に彩ります。</p>
+                    <h2 class="fish-name serif">ヒラス（ヒラマサ）</h2>
+                    <p class="fish-desc">ブリに似ていますが、さらに身が引き締まり、高級魚として扱われます。コリコリとした抜群の歯ごたえと爽やかな脂の旨味が最高です。</p>
                 </div>
             </div>
 
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="aji.png" alt="アジ" class="fish-img">
+                <div class="fish-img-wrap"><img src="buri.png" alt="ブリ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">ブリ</h2>
+                    <p class="fish-desc">隠岐の荒波に揉まれたブリは脂の乗りが格別。特にお刺身やブリしゃぶにすると、口の中でとろけるような濃厚なコクが広がります。</p>
                 </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="marugo.png" alt="マルゴ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">マルゴ</h2>
+                    <p class="fish-desc">ブリの出世段階（中型サイズ）の地元呼びです。脂が乗りつつも、重すぎず絶妙にサッパリとした旨味が楽しめます。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="hamachi.png" alt="ハマチ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">ハマチ</h2>
+                    <p class="fish-desc">若魚ならではの爽やかな甘みと、弾力のある引き締まった食感が魅力。お刺身はもちろん、カルパッチョ等にも最適です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="kanpachi.png" alt="カンパチ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">カンパチ</h2>
+                    <p class="fish-desc">青魚の中でも特に上品な脂を誇り、一切クセがありません。コリコリとした歯ごたえが長持ちし、お刺身としての格が非常に高い逸品です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="aji.png" alt="アジ" class="fish-img"></div>
                 <div class="fish-info">
                     <h2 class="fish-name serif">アジ</h2>
-                    <div class="fish-meta">旬の時期：春〜夏 / 主な調理法：たたき、なめろう、フライ、塩焼き</div>
-                    <p class="fish-desc">朝獲れの抜群の鮮度でお届けする大ぶりのアジです。スーパーに並ぶものとは一線を画す、ツヤのある魚体とコリコリとした圧倒的な食感。青魚特有の臭みが一切なく、お刺身や「たたき」で生姜醤油と合わせると絶品です。</p>
+                    <p class="fish-desc">抜群の鮮度を誇る大ぶりのアジです。青魚特有の臭みが全くなく、たたきやなめろう、塩焼きでその違いがはっきりと分かります。</p>
                 </div>
             </div>
 
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="hirame.png" alt="ヒラメ" class="fish-img">
+                <div class="fish-img-wrap"><img src="isaki.png" alt="イサキ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">イサキ</h2>
+                    <p class="fish-desc">梅雨時期をはじめ、特に初夏に抜群の美味しさを迎える白身魚。皮目をサッと炙ったお刺身や、香ばしい塩焼きが絶品です。</p>
                 </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="ishidai.png" alt="イシダイ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">イシダイ</h2>
+                    <p class="fish-desc">磯の王者とも呼ばれる高級魚。非常に強靭な身の歯ごたえと、噛むほどに溢れ出す濃厚な白身の旨味が釣り人やお客さんを唸らせます。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="tai.png" alt="タイ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">タイ</h2>
+                    <p class="fish-desc">美しい魚体の上品な天然マダイ。隠岐の清らかな海で美味しいエサを贅沢に食べて育つため、身の甘みが格段に違います。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="hirame.png" alt="ヒラメ" class="fish-img"></div>
                 <div class="fish-info">
                     <h2 class="fish-name serif">ヒラメ</h2>
-                    <div class="fish-meta">旬の時期：秋〜冬 / 主な調理法：お刺身（薄造り）、ムニエル、煮付け</div>
-                    <p class="fish-desc">砂地が広がる隠岐の綺麗な海底で育った極上の天然ヒラメです。透き通るような美しい白身は、噛むほどに上品な甘みが広がります。特にお刺身の薄造りや、1匹からわずかしか取れない濃厚な「えんがわ」の美味しさは格別です。</p>
+                    <p class="fish-desc">透き通るような美しい白身の高級魚。薄造りのお刺身は絶品で、1匹からごく僅かしか取れない濃厚な「えんがわ」も最高です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="kue.png" alt="クエ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">クエ</h2>
+                    <p class="fish-desc">めったに獲れない幻の超高級魚。白身でありながら、コラーゲンと極上の脂が乗った身は、お鍋やお刺身で究極の美味とされます。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="mejina.png" alt="メジナ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">メジナ</h2>
+                    <p class="fish-desc">磯釣りの対象魚としても大人気の魚。引き締まった上品な白身で、お刺身、煮付け、焼き物などマルチに美味しく化ける魚です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="kawahagi.png" alt="カワハギ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">カワハギ</h2>
+                    <p class="fish-desc">コリコリとしたクセのない白身はもちろん、海のフォアグラとも呼ばれる「濃厚な肝（キモ）」を醤油に溶かして食べるお刺身が極上です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="tobiuo.png" alt="トビウオ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">トビウオ</h2>
+                    <p class="fish-desc">島根の県魚でもあり、アゴの名で親しまれる魚。非常にヘルシーで高タンパクな引き締まった身は、なめろうやお刺身にすると絶品です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="osen.png" alt="オセン" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">オセン（スズメダイ）</h2>
+                    <p class="fish-desc">小ぶりながら、骨をものともしないほど濃厚な脂と旨味がギュッと詰まった地魚。地元では塩焼きや干物にして、骨ごとガツガツ食べるのが至福の美味です。</p>
                 </div>
             </div>
         </div>
