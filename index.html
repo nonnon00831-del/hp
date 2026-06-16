@@ -51,4 +51,242 @@
         .product-name { font-size: 1.4rem; color: #0b2545; margin-bottom: 8px; font-weight: 700; }
         .product-btn { font-size: 0.85rem; color: #134074; font-weight: bold; border-bottom: 2px solid #134074; display: inline-block; padding-bottom: 2px; margin-top: 10px; }
 
-        .direct-notice { background-color: #e3ebf3; border-left: 4
+        .direct-notice { background-color: #e3ebf3; border-left: 4px solid #134074; padding: 30px; margin-top: 60px; border-radius: 0 4px 4px 0; }
+        .direct-notice h4 { color: #0b2545; margin-bottom: 10px; font-size: 1.1rem; }
+        .direct-notice p { font-size: 0.9rem; color: #334e68; }
+
+        .flow-timeline { max-width: 800px; margin: 0 auto; }
+        .flow-node { display: flex; margin-bottom: 45px; }
+        .flow-left { width: 80px; font-size: 1.6rem; font-weight: bold; color: #134074; }
+        .flow-right { flex: 1; padding-bottom: 25px; border-bottom: 1px solid #eef2f5; }
+        .flow-right h4 { font-size: 1.15rem; color: #0b2545; margin-bottom: 10px; }
+        .flow-right p { font-size: 0.9rem; color: #486581; }
+
+        .contact-section { background-color: #0b2545; color: #fff; }
+        .contact-section .section-title { color: #fff; }
+        .contact-section .section-subtitle { color: #8da9c4; }
+        .contact-wrapper { max-width: 700px; margin: 0 auto; }
+        .contact-info-direct { text-align: center; margin-bottom: 40px; background-color: rgba(255,255,255,0.05); padding: 25px; border-radius: 2px; }
+        .contact-info-direct p { font-size: 1rem; color: #bcccdc; }
+        .tel-number { font-size: 2rem; color: #fff; font-weight: bold; margin: 10px 0; display: block; letter-spacing: 0.05em; text-decoration: none; }
+        .form-box { background-color: #fff; padding: 50px; border-radius: 2px; color: #333; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 700; font-size: 0.9rem; color: #0b2545; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px; border: 1px solid #d8e2dc; background-color: #fdfdfd; font-size: 0.95rem; color: #333; outline: none; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #134074; }
+        .submit-btn { display: block; width: 100%; padding: 18px; background-color: #134074; color: #fff; border: none; font-size: 1.05rem; font-weight: 700; cursor: pointer; letter-spacing: 0.1em; transition: background-color 0.3s; }
+        .submit-btn:hover { background-color: #0b2545; }
+
+        footer { background-color: #05101e; color: #627d98; text-align: center; padding: 50px 0; font-size: 0.85rem; border-top: 1px solid #0b2545; }
+        footer p { margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .hero { height: auto; padding: 120px 0 60px 0; background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.85)), url('スクリーンショット 2026-06-17 005757.png') no-repeat center center/cover; }
+            .hero-title-wrap { writing-mode: horizontal-tb; border-left: none; border-bottom: 2px solid #134074; padding-left: 0; padding-bottom: 15px; }
+            .hero h1 { font-size: 2rem; }
+            .about-flex { flex-direction: column; gap: 40px; }
+            .product-grid { grid-template-columns: 1fr; }
+            .form-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo serif">幸丸水産</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">幸丸水産の想い</a></li>
+                    <li><a href="#products">海の恵み一覧</a></li>
+                    <li><a href="#flow">直接購入の流れ</a></li>
+                    <li><a href="#contact">お問合せ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-title-wrap">
+                    <h1 class="serif">この海の話をしよう。</h1>
+                </div>
+                <div class="sub-message serif">
+                    <p>本当のおいしさを知るのは、</p>
+                    <p>隠岐の豊かな自然に育まれた海の恵みを味わう時かもしれません。</p>
+                    <br>
+                    <p>いつまでも、この海が豊かであるように。</p>
+                    <br>
+                    <p><strong>海の豊かさは、食べればわかる。</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <div class="section-title-area">
+            <span class="section-subtitle">Our Story</span>
+            <h2 class="section-title serif">自然と、ひたむきに向き合う。</h2>
+        </div>
+        <div class="about-flex">
+            <div class="about-text">
+                <h3 class="serif">島根県隠岐郡海士町・豊田から<br>確かな品質をお届けします</h3>
+                <p>対馬暖流と島々が育む豊かなプランクトン、清らかな海水。ここ隠岐の海は、海の恵みを育てるための最高の環境が整っています。</p>
+                <p>私たち幸丸水産は、この恵まれた漁場を舞台に、我が子を手塩にかけるように一つひとつの魚介類と向き合っています。自然の循環を守り、次の世代へこの豊かな海を繋ぐこと。それが私たちの使命です。船の上で鍛え上げられた確かな目利きで、本当に美味しい状態の海の幸だけを厳選して皆様の食卓へお届けします。</p>
+            </div>
+            <div class="about-img-wrap">
+                <img src="スクリーンショット 2026-06-17 003508.png" alt="幸丸水産 山下照夫" class="about-img">
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="product-section">
+        <div class="container">
+            <div class="section-title-area">
+                <span class="section-subtitle">Products</span>
+                <h2 class="section-title serif">幸丸水産の海の幸</h2>
+            </div>
+            
+            <div class="product-grid">
+                <a href="iwagaki.html" class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="スクリーンショット 2026-06-17 004238.png" alt="隠岐の岩牡蠣" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name serif">岩牡蠣</h3>
+                        <p style="font-size: 0.85rem; color: #666;">サイズ・価格・送料表はこちら</p>
+                        <span class="product-btn">詳しく見る</span>
+                    </div>
+                </a>
+
+                <a href="sengyo.html" class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="スクリーンショット 2026-06-17 005911.png" alt="季節の魚" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name serif">季節の鮮魚</h3>
+                        <p style="font-size: 0.85rem; color: #666;">一本釣り・朝獲れの隠岐の地魚</p>
+                        <span class="product-btn">詳しく見る</span>
+                    </div>
+                </a>
+
+                <a href="iwagaki.html#sazae-section" class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="スクリーンショット 2026-06-17 005949.png" alt="活きサザエ" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name serif">サザエ</h3>
+                        <p style="font-size: 0.85rem; color: #666;">波が育む、角の発達した活きサザエ</p>
+                        <span class="product-btn">詳しく見る</span>
+                    </div>
+                </a>
+
+                <a href="ika.html" class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="image_eab5e3.png" alt="隠岐の特選イカ" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name serif">イカ</h3>
+                        <p style="font-size: 0.85rem; color: #666;">シロイカ・シマメ・テナシ・アオリ</p>
+                        <span class="product-btn">詳しく見る</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="direct-notice">
+                <h4 class="serif">💡 商品のご購入をご希望のお客様へ</h4>
+                <p>幸丸水産では、旬の海の幸を一番良い状態でお届けするため、水揚げ状況に応じた「直接のご相談・販売」を承っております。ご希望のページで詳細をご確認いただき、下部フォームまたはお電話よりお気軽にご連絡ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="flow" class="container">
+        <div class="section-title-area">
+            <span class="section-subtitle">Order Flow</span>
+            <h2 class="section-title serif">直接購入・ご相談の流れ</h2>
+        </div>
+        
+        <div class="flow-timeline">
+            <div class="flow-node">
+                <div class="flow-left serif">01</div>
+                <div class="flow-right">
+                    <h4 class="serif">お問合せ・ご要望のご連絡</h4>
+                    <p>まずは下記フォーム、またはお電話（08514-2-0650）にて、ご希望の商品やご予算をお気軽にお知らせください。</p>
+                </div>
+            </div>
+            <div class="flow-node">
+                <div class="flow-left serif">02</div>
+                <div class="flow-right">
+                    <h4 class="serif">水揚げ状況と価格・お届け時期のご案内</h4>
+                    <p>海の状態や当日の水揚げ状況を確認し、ご用意できる内容、送料を含めた正確な合計金額、お届け予定時期を折り返しご連絡いたします。</p>
+                </div>
+            </div>
+            <div class="flow-node">
+                <div class="flow-left serif">03</div>
+                <div class="flow-right">
+                    <h4 class="serif">厳選した海の幸を発送</h4>
+                    <p>内容にご納得いただけましたら、海士町の漁場から最高の鮮度を保ったままクール便にてお客様のご自宅へ産地直送いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container contact-wrapper">
+            <div class="section-title-area">
+                <span class="section-subtitle">Contact</span>
+                <h2 class="section-title serif">お問合せ・直接注文のご相談</h2>
+            </div>
+
+            <div class="contact-info-direct">
+                <p>お急ぎの場合や、本日の水揚げ状況を直接聞きたい場合はお電話でお気軽にどうぞ</p>
+                <a href="tel:0851420650" class="tel-number">TEL&FAX : 08514-2-0650</a>
+            </div>
+            
+            <div class="form-box">
+                <form action="#" method="POST" onsubmit="alert('お問い合わせのデモ送信が完了しました。'); return false;">
+                    <div class="form-group">
+                        <label for="name">お名前 <span style="color:#e74c3c;">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span style="color:#e74c3c;">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="例：info@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">電話番号 <span style="color:#e74c3c;">*</span></label>
+                        <input type="tel" id="tel" name="tel" required placeholder="例：090-1234-5678">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_select">ご希望の商品 <span style="color:#e74c3c;">*</span></label>
+                        <select id="product_select" name="product_select" required>
+                            <option value="">選択してください</option>
+                            <option value="iwagaki">岩牡蠣 について</option>
+                            <option value="sengyo">季節の鮮魚 について</option>
+                            <option value="sazae">サザエ について</option>
+                            <option value="ika">イカ について</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">ご相談内容 <span style="color:#e74c3c;">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="例：「岩牡蠣のLサイズを10個セットで購入したいです」など、お気軽にご記入ください。"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn serif">この内容で相談する</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="serif" style="font-size: 1.2rem; color: #fff; margin-bottom: 15px;">幸丸水産</p>
+            <p>〒684-0402 島根県隠岐郡海士町大字豊田2-1</p>
+            <p>TEL & FAX : 08514-2-0650</p>
+            <p style="margin-top: 30px; font-size: 0.75rem; color: #334e68;">© 幸丸水産 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
