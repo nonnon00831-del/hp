@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【公式】○○水産 | 伝統の漁場から届く、極上の海の幸</title>
+    <!-- Google Fontsから美しい明朝体とゴシック体を読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 全体のリセットと共通設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #2c3e50;
+            line-height: 1.8;
+            background-color: #fafbfc;
+            letter-spacing: 0.05em;
+        }
+        .serif {
+            font-family: 'Noto Serif JP', serif;
+        }
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 洗練されたナビゲーション */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #eef2f5;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0b2545;
+            letter-spacing: 0.1em;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin-left: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #5c6b73;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #134074;
+        }
+
+        /* メインビジュアル：余白と縦書きで和モダンを演出 */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(to right, rgba(250,251,252,0.9) 30%, rgba(250,251,252,0.2) 100%), 
+                        url('https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?auto=format&fit=crop&w=1200&q=80') no-repeat center right/cover;
+            display: flex;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .hero-inner {
+            display: flex;
+            align-items: flex-start;
+        }
+        .hero-title-wrap {
+            writing-mode: vertical-rl; /* 縦書き */
+            text-orientation: mixed;
+            border-left: 1px solid #134074;
+            padding-left: 20px;
+            margin-right: 30px;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            color: #0b2545;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1rem;
+            color: #5c6b73;
+            margin-top: 20px;
+            letter-spacing: 0.2em;
+        }
+
+        /* セクション共通 */
+        section {
+            padding: 120px 0;
+        }
+        .section-title-area {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section-subtitle {
+            font-size: 0.8rem;
+            color: #134074;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 2rem;
+            color: #0b2545;
+            font-weight: 500;
+        }
+
+        /* ストーリー（古谷水産のABOUTに代わる、独自の想い） */
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 1.5rem;
+            color: #0b2545;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            color: #5c6b73;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .about-img {
+            flex: 1;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* 商品一覧：すっきりとしたカードデザイン */
+        .product-section {
+            background-color: #f0f4f8;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 0px; /* あえて角を丸めずシャープに */
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        .product-img-wrap {
+            overflow: hidden;
+            height: 240px;
+            background-color: #eaeaea;
+        }
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 30px;
+        }
+        .product-tag {
+            font-size: 0.75rem;
+            color: #134074;
+            border: 1px solid #134074;
+            padding: 2px 8px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .product-name {
+            font-size: 1.25rem;
+            color: #0b2545;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #eef2f5;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+        .product-desc {
+            font-size: 0.9rem;
+            color: #66747f;
+        }
+
+        /* ご注文・お問い合わせの流れ */
+        .flow-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .flow-node {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .flow-left {
+            width: 80px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #134074;
+            font-family: 'Noto Serif JP', serif;
+        }
+        .flow-right {
+            flex: 1;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eef2f5;
+        }
+        .flow-right h4 {
+            font-size: 1.1rem;
+            color: #0b2545;
+            margin-bottom: 10px;
+        }
+        .flow-right p {
+            font-size: 0.9rem;
+            color: #5c6b73;
+        }
+
+        /* 洗練されたトーンの問い合わせフォーム */
+        .contact-section {
+            background-color: #0b2545;
+            color: #fff;
+        }
+        .contact-section .section-title {
+            color: #fff;
+        }
+        .contact-section .section-subtitle {
+            color: #8da9c4;
+        }
+        .contact-wrapper {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .form-box {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 2px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #0b2545;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d8e2dc;
+            background-color: #fdfdfd;
+            font-size: 0.95rem;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #134074;
+        }
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background-color: #134074;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.1em;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #0b2545;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #05101e;
+            color: #8da9c4;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.85rem;
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .header-inner { padding: 15px 0; }
+            nav { display: none; } /* スマホ時はナビを簡易化、または非表示 */
+            .hero {
+                height: auto;
+                padding: 100px 0;
+                background: linear-gradient(rgba(250,251,252,0.85), rgba(250,251,252,0.85)), 
+                            url('https://images.unsplash.com/photo-1516466723877-e4ec1d736c8a?auto=format&fit=crop&w=600&q=80') no-repeat center right/cover;
+            }
+            .hero-title-wrap { writing-mode: horizontal-tb; border-left: none; border-bottom: 2px solid #134074; padding-left: 0; padding-bottom: 10px; margin-bottom: 20px; }
+            .hero h1 { font-size: 1.8rem; }
+            .about-flex { flex-direction: column; gap: 30px; }
+            .about-img { height: 250px; order: -1; }
+            .form-box { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo serif">○○水産</div>
+            <nav>
+                <ul>
+                    <li><a href="#about">私たちのこと</a></li>
+                    <li><a href="#products">お品書き</a></li>
+                    <li><a href="#flow">ご利用の流れ</a></li>
+                    <li><a href="#contact">お問合せ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-title-wrap">
+                <h1 class="serif">自然と、<br>手塩にかけて<br>育てる。</h1>
+            </div>
+            <div>
+                <p class="serif">知る人ぞ知る、伝統の漁場から</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 私たちのこと（ストーリー） -->
+    <section id="about" class="container">
+        <div class="section-title-area">
+            <span class="section-subtitle">About Us</span>
+            <h2 class="section-title serif">小さな漁場から、本物の味を。</h2>
+        </div>
+        <div class="about-flex">
+            <div class="about-text">
+                <h3 class="serif">受け継がれてきた技術と、妥協のない品質管理</h3>
+                <p>私たちの営む漁場は、豊かな自然の恵みが集まる特別な場所にあります。母の代から子へと、長年かけて培ってきた独自の養殖・水揚げ技術を大切に守り続けてきました。</p>
+                <p>自然を相手にする仕事だからこそ、手塩にかけて育てるプロセスには一切の妥協を許しません。私たちが誇りを持ってお届けする最高の一品を、ぜひ一度ご賞味ください。</p>
+            </div>
+            <!-- 右側：作業風景をイメージさせるダミー画像 -->
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="漁場での作業風景" class="about-img">
+        </div>
+    </section>
+
+    <!-- お品書き（商品紹介） -->
+    <section id="products" class="product-section">
+        <div class="container">
+            <div class="section-title-area">
+                <span class="section-subtitle">Products</span>
+                <h2 class="section-title serif">本日の水揚げ・お品書き</h2>
+            </div>
+            
+            <div class="product-grid">
+                <!-- 商品1 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=500&q=80" alt="厳選 旬の魚介" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">看板商品</span>
+                        <h3 class="product-name serif">【極上】朝獲れプレミアム鮮魚パック</h3>
+                        <p class="product-price">¥4,800 〜 <span style="font-size:0.8rem; font-weight:normal; color:#666;">（税込・送料別）</span></p>
+                        <p class="product-desc">水揚げ直後に最適な処理を施した、その日一番の魚介類をお届け。鮮度の違いをご実感いただけます。</p>
+                    </div>
+                </div>
+
+                <!-- 商品2 -->
+                <div class="product-card">
+                    <div class="product-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1551248429-4043babc4337?auto=format&fit=crop&w=500&q=80" alt="特選 貝類" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">数量限定</span>
+                        <h3 class="product-name serif">伝統の海で育った 特選活き貝セット</h3>
+                        <p class="product-price">¥3,500 <span style="font-size:0.8rem; font-weight:normal; color:#666;">（税込・送料別）</span></p>
+                        <p class="product-desc">身がぷるんと引き締まり、濃厚な磯の香りが広がる極上の貝類。網焼きや酒蒸しに最高です。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 50px; font-size: 0.85rem; color: #7f8c8d;">
+                ※私たちは品質と鮮度を最優先にするため、水揚げ状況によってはお待ちいただく場合がございます。<br>
+                現在の正確な受付状況については、お気軽にお問い合わせください。
+            </p>
+        </div>
+    </section>
+
+    <!-- ご利用の流れ -->
+    <section id="flow" class="container">
+        <div class="section-title-area">
+            <span class="section-subtitle">Order Flow</span>
+            <h2 class="section-title serif">ご注文・お問い合わせの流れ</h2>
+        </div>
+        
+        <div class="flow-timeline">
+            <div class="flow-node">
+                <div class="flow-left">01</div>
+                <div class="flow-right">
+                    <h4 class="serif">フォームからご希望をお知らせください</h4>
+                    <p>下記のお問い合わせフォームより、お名前、ご連絡先、ご希望の商品や数量をご記入の上、送信してください。</p>
+                </div>
+            </div>
+            <div class="flow-node">
+                <div class="flow-left">02</div>
+                <div class="flow-right">
+                    <h4 class="serif">折り返し、詳細をご案内いたします</h4>
+                    <p>水揚げ状況を確認し、送料を含めた合計金額、お届け予定時期、お支払い方法をメール（またはお電話）にてご連絡いたします。</p>
+                </div>
+            </div>
+            <div class="flow-node">
+                <div class="flow-left">03</div>
+                <div class="flow-right">
+                    <h4 class="serif">最適なお知らせののち、発送いたします</h4>
+                    <p>お支払いの確認が取れ次第、最も良い状態の海の幸を厳選し、産地からクール便にてお客様の元へ直送いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせ -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-wrapper">
+            <div class="section-title-area">
+                <span class="section-subtitle">Contact</span>
+                <h2 class="section-title serif">お問合せ・ご注文受付</h2>
+            </div>
+            
+            <div class="form-box">
+                <form action="#" method="POST" onsubmit="alert('お問い合わせのデモ送信が完了しました。'); return false;">
+                    <div class="form-group">
+                        <label Invisible for="name">お名前 <span style="color:#e74c3c;">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="例：山田 太郎">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span style="color:#e74c3c;">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="例：info@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tel">電話番号 <span style="color:#e74c3c;">*</span></label>
+                        <input type="tel" id="tel" name="tel" required placeholder="例：090-1234-5678">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="type">お問合せの種類 <span style="color:#e74c3c;">*</span></label>
+                        <select id="type" name="type" required>
+                            <option value="">選択してください</option>
+                            <option value="order">商品の購入を希望する</option>
+                            <option value="ask">商品の時期や在庫について聞きたい</option>
+                            <option value="other">その他のお問合せ</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">内容 <span style="color:#e74c3c;">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="ご希望の商品名、数量、配送先のご住所などをご記入ください。"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn serif">この内容で送信する</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p class="serif" style="font-size: 1.1rem; color: #fff; margin-bottom: 15px;">○○水産</p>
+            <p>〒000-0000 〇〇県〇〇市〇〇町123</p>
+            <p style="margin-top: 20px; font-size: 0.75rem;">© ○○水産 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
