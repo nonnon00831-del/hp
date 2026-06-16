@@ -14,7 +14,6 @@
         .serif { font-family: 'Noto Serif JP', serif; }
         .container { width: 88%; max-width: 950px; margin: 0 auto; }
         
-        /* シンプルなヘッダー（トップに戻るリンク付き） */
         header { background-color: #fff; position: fixed; width: 100%; top: 0; left: 0; z-index: 100; border-bottom: 1px solid #eef2f5; padding: 20px 0; }
         .header-inner { display: flex; justify-content: space-between; align-items: center; }
         .logo-link { text-decoration: none; font-size: 1.3rem; font-weight: 700; color: #0b2545; letter-spacing: 0.15em; }
@@ -25,7 +24,6 @@
         .page-title { font-size: 2.2rem; color: #0b2545; margin-bottom: 10px; }
         .intro-text { text-align: center; color: #5c6b73; max-width: 700px; margin: 0 auto 40px auto; font-size: 0.95rem; }
 
-        /* ノートのイメージを再現した綺麗な料金表スタイル */
         .table-wrapper { background: #fff; padding: 30px; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); margin-bottom: 40px; overflow-x: auto; }
         .table-title { font-size: 1.3rem; color: #134074; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid #134074; font-weight: 700; }
         
@@ -34,8 +32,8 @@
         th { background-color: #f1f5f9; color: #0b2545; font-weight: 700; }
         td.left { text-align: left; font-weight: bold; background-color: #f8fafc; color: #0b2545; }
         .price-text { font-weight: bold; color: #0b2545; }
+        .weight-text { font-size: 0.85rem; color: #627d98; font-weight: normal; display: block; margin-top: 4px; }
         
-        /* 牡蠣メスセットの注釈 */
         .notice-box { background-color: #f0f4f8; border-left: 4px solid #134074; padding: 20px; margin-top: 15px; border-radius: 0 4px 4px 0; }
         .notice-box h4 { font-size: 1rem; color: #0b2545; margin-bottom: 5px; }
         .notice-box p { font-size: 0.85rem; color: #486581; }
@@ -67,7 +65,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>サイズ</th>
+                        <th>サイズ（1個あたりの重さ目安）</th>
                         <th>個数</th>
                         <th>通常価格（貝のみ）</th>
                         <th>牡蠣メスセット付き価格</th>
@@ -75,13 +73,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="left">2Lサイズ (大)</td>
+                        <td class="left">
+                            2Lサイズ（特大）
+                            <span class="weight-text">※1個あたり 350g 〜</span>
+                        </td>
                         <td>10個入り</td>
                         <td class="price-text">8,500円</td>
                         <td class="price-text">9,000円</td>
                     </tr>
                     <tr>
-                        <td class="left" rowspan="2">Lサイズ (中)</td>
+                        <td class="left" rowspan="2">
+                            Lサイズ（大）
+                            <span class="weight-text">※1個あたり 280g 〜 350g</span>
+                        </td>
                         <td>10個入り</td>
                         <td class="price-text">6,500円</td>
                         <td class="price-text">7,000円</td>
@@ -89,20 +93,32 @@
                     <tr>
                         <td>5個入り</td>
                         <td class="price-text">3,500円</td>
-                        <td class="price-text">4,000円</td>
+                        <td class="price-text">4,000元</td>
                     </tr>
                     <tr>
-                        <td class="left">Mサイズ (小)</td>
+                        <td class="left">
+                            Mサイズ（中）
+                            <span class="weight-text">※1個あたり 200g 〜 280g</span>
+                        </td>
                         <td>10個入り</td>
                         <td class="price-text">4,500円</td>
                         <td class="price-text">5,000円</td>
+                    </tr>
+                    <tr>
+                        <td class="left">
+                            Sサイズ（小）
+                            <span class="weight-text">※1個あたり 150g 〜 200g</span>
+                        </td>
+                        <td>10個入り</td>
+                        <td class="price-text">3,500円</td>
+                        <td class="price-text">4,000円</td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="notice-box">
                 <h4>💡 牡蠣メスセットとは？</h4>
-                <p>届いてすぐに岩牡蠣をお楽しみいただけるよう、<strong>【特製牡蠣剥きメス 1本 ＋ 軍手 ＋ わかりやすい剥き方解説チラシ】</strong>を同梱した便利なセットです。初めての方にはメスセット付きが非常におすすめです！</p>
+                <p>届いてすぐに岩牡蠣をお楽しみいただけるよう、<strong>【特製牡蠣剥きメス 1本 ＋ 軍手 ＋ わかりやすい剥き方解説チラシ】</strong>を同梱した便利なセットです。初めて購入される方にはメスセット付きが非常におすすめです！</p>
             </div>
         </div>
 
