@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特選イカ四選 | 幸丸水産</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght=500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans JP', sans-serif; color: #2c3e50; line-height: 1.9; background-color: #fafbfc; padding-top: 100px; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+        .container { width: 88%; max-width: 1000px; margin: 0 auto; }
+        
+        header { background-color: #fff; position: fixed; width: 100%; top: 0; left: 0; z-index: 100; border-bottom: 1px solid #eef2f5; padding: 20px 0; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo-link { text-decoration: none; font-size: 1.3rem; font-weight: 700; color: #0b2545; letter-spacing: 0.15em; }
+        .back-link { text-decoration: none; color: #134074; font-size: 0.9rem; font-weight: bold; }
+
+        .banner-wrap { width: 100%; height: 350px; overflow: hidden; margin-bottom: 50px; position: relative; border-radius: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        .banner-img { width: 100%; height: 100%; object-fit: cover; }
+        .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)); display: flex; align-items: flex-end; padding: 40px; }
+        .banner-title { color: #fff; font-size: 2.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+
+        /* 重要：要相談の注意書きボックス */
+        .consult-notice-box { background-color: #fff5f5; border: 1px solid #feb2b2; border-left: 5px solid #e53e3e; padding: 25px; margin-bottom: 60px; border-radius: 4px; }
+        .consult-notice-box h3 { color: #9b2c2c; margin-bottom: 10px; font-size: 1.15rem; }
+        .consult-notice-box p { font-size: 0.9rem; color: #742a2a; }
+
+        .fish-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
+        .fish-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; }
+        .fish-card:hover { transform: translateY(-4px); }
+        .fish-img-wrap { flex: 1; max-width: 350px; min-height: 250px; background-color: #f1f5f9; }
+        .fish-img { width: 100%; height: 100%; object-fit: cover; }
+        .fish-info { flex: 1.5; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
+        .fish-name { font-size: 1.5rem; color: #0b2545; margin-bottom: 5px; font-weight: 700; }
+        .fish-meta { font-size: 0.8rem; color: #627d98; margin-bottom: 15px; letter-spacing: 0.05em; }
+        .fish-desc { font-size: 0.95rem; color: #486581; text-align: justify; }
+
+        .footer-note-btn { text-align: center; margin-top: 60px; padding: 40px 0; border-top: 1px solid #eef2f5; }
+        .btn-contact { display: inline-block; background-color: #134074; color: #fff; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: background 0.3s; }
+        .btn-contact:hover { background-color: #0b2545; }
+
+        footer { background-color: #05101e; color: #627d98; text-align: center; padding: 40px 0; font-size: 0.85rem; margin-top: 60px; }
+        
+        @media (max-width: 768px) {
+            .banner-wrap { height: 200px; }
+            .banner-title { font-size: 1.8rem; }
+            .fish-card { flex-direction: column; }
+            .fish-img-wrap { max-width: 100%; height: 200px; min-height: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo-link serif">幸丸水産</a>
+            <a href="index.html#products" class="back-link">← 商品一覧に戻る</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="banner-wrap">
+            <img src="image_eab5e3.png" alt="隠岐の特選イカ" class="banner-img">
+            <div class="banner-overlay">
+                <h1 class="banner-title serif">特選イカ四選</h1>
+            </div>
+        </div>
+
+        <div class="consult-notice-box">
+            <h3 class="serif">⚠️ イカのお届けに関する大切なお願い</h3>
+            <p>イカは海の温度や潮の流れに非常に敏感で、日によって水揚げ量が大きく変動する大変繊細な生き物です。そのため、鮮魚と同様に<strong>確実なお届け日時のご指定が難しい場合</strong>がございます。最高に美味しい状態の一杯をお届けするために、ご注文の際は時期や内容について要相談とさせていただいております。あらかじめご了承いただき、まずはお気軽に下部フォームよりご相談ください。</p>
+        </div>
+
+        <div class="fish-grid">
+            <div class="fish-card">
+                <div class="fish-img-wrap">
+                    <img src="shiroika.png" alt="白イカ（シロイカ）" class="fish-img">
+                </div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">白イカ（シロイカ）</h2>
+                    <div class="fish-meta">標準和名：ケンサキイカ / 特徴：隠岐を代表する高級イカ。甘みともっちりした食感が特徴です。</div>
+                    <p class="fish-desc">イカの女王とも呼ばれ、ひとくち噛むだけで濃厚な強い甘みと、ねっとりとした極上の舌触りが広がります。お刺身にするだけで主役級の贅沢な一皿になり、一度食べたら忘れられない隠岐自慢の最高級品です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap">
+                    <img src="shimame.png" alt="シマメ" class="fish-img">
+                </div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">シマメ</h2>
+                    <div class="fish-meta">標準和名：スルメイカ / 特徴：隠岐の方言でスルメイカを指します。特に冬獲れるものは「寒シマメ」と呼ばれ、漬け丼などが有名です。</div>
+                    <p class="fish-desc">非常に肉厚で歯ごたえが抜群、噛めば噛むほど湧き出る旨味が特徴の男前なイカです。地元・海士町でも愛される「寒シマメの肝醤油漬け丼」の材料としても最高で、お酒のアテや炒め物、煮付けにしてもコク深い味わいが楽しめます。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap">
+                    <img src="tenashi.png" alt="テナシ" class="fish-img">
+                </div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">テナシ</h2>
+                    <div class="fish-meta">標準和名：ヤリイカ / 特徴：隠岐周辺ではこう呼ばれることがあり、初夏から夏にかけてよく獲れます。</div>
+                    <p class="fish-desc">触腕（長い2本の腕）が短いことから「手無し（テナシ）」の愛称で親しまれています。身がとても上品に透き通っており、コリコリとした小気味よい軽やかな食感が魅力。上品であっさりとした甘みは、お刺身は勿論、天ぷらやサッと炙る食べ方にも最適です。</p>
+                </div>
+            </div>
+
+            <div class="fish-card">
+                <div class="fish-img-wrap">
+                    <img src="aoriika.png" alt="アオリイカ" class="fish-img">
+                </div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">アオリイカ</h2>
+                    <div class="fish-meta">標準和名：アオリイカ / 特徴：イカの王様。肉厚で濃厚な旨味成分がトップクラスです。</div>
+                    <p class="fish-desc">数あるイカの中でも、旨味と甘みをもたらすアミノ酸含有量が非常に高く「最高峰の味」と称されるアオリイカ。贅沢な厚みのある身は非常にもっちりとしており、お刺身、煮物、焼き物、どんな調理法にしてもイカ本来の圧倒的な深いコクを堪能いただけます。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-note-btn">
+            <p style="margin-bottom: 20px; font-weight: bold; color: #0b2545;">いま獲れている旬のイカの種類や、発送時期のご相談はこちらから！</p>
+            <a href="index.html#contact" class="btn-contact serif">イカの水揚げ状況を相談する</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 幸丸水産 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
