@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>特選イカ四選 | 幸丸水産</title>
+    <title>特選イカ・タコ五選 | 幸丸水産</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght=500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -24,14 +24,12 @@
         .banner-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)); display: flex; align-items: flex-end; padding: 40px; }
         .banner-title { color: #fff; font-size: 2.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
 
-        /* 重要：要相談の注意書きボックス */
         .consult-notice-box { background-color: #fff5f5; border: 1px solid #feb2b2; border-left: 5px solid #e53e3e; padding: 25px; margin-bottom: 60px; border-radius: 4px; }
         .consult-notice-box h3 { color: #9b2c2c; margin-bottom: 10px; font-size: 1.15rem; }
         .consult-notice-box p { font-size: 0.9rem; color: #742a2a; }
 
         .fish-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; }
-        .fish-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: transform 0.3s; }
-        .fish-card:hover { transform: translateY(-4px); }
+        .fish-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; display: flex; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
         .fish-img-wrap { flex: 1; max-width: 350px; min-height: 250px; background-color: #f1f5f9; }
         .fish-img { width: 100%; height: 100%; object-fit: cover; }
         .fish-info { flex: 1.5; padding: 30px; display: flex; flex-direction: column; justify-content: center; }
@@ -47,7 +45,6 @@
         
         @media (max-width: 768px) {
             .banner-wrap { height: 200px; }
-            .banner-title { font-size: 1.8rem; }
             .fish-card { flex-direction: column; }
             .fish-img-wrap { max-width: 100%; height: 200px; min-height: auto; }
         }
@@ -64,22 +61,21 @@
 
     <div class="container">
         <div class="banner-wrap">
-            <img src="image_eab5e3.png" alt="隠岐の特選イカ" class="banner-img">
+            <img src="image_eab5e3.png" alt="隠岐の特選イカ・タコ" class="banner-img">
             <div class="banner-overlay">
-                <h1 class="banner-title serif">特選イカ四選</h1>
+                <h1 class="banner-title serif">特選イカ・タコ五選</h1>
             </div>
         </div>
 
         <div class="consult-notice-box">
-            <h3 class="serif">⚠️ イカのお届けに関する大切なお願い</h3>
-            <p>イカは海の温度や潮の流れに非常に敏感で、日によって水揚げ量が大きく変動する大変繊細な生き物です。そのため、鮮魚と同様に<strong>確実なお届け日時のご指定が難しい場合</strong>がございます。最高に美味しい状態の一杯をお届けするために、ご注文の際は時期や内容について要相談とさせていただいております。あらかじめご了承いただき、まずはお気軽に下部フォームよりご相談ください。</p>
+            <h3 class="serif">⚠️ イカ・タコのお届けに関する大切なお願い</h3>
+            <p>イカやタコは海の温度や潮の流れに非常に敏感で、日によって水揚げ量が大きく変動する大変繊細な海の恵みです。そのため、確実なお届け日時のご指定が難しい場合がございます。最高に美味しい状態の一杯をお届けするために、ご注文の際は時期や内容について要相談とさせていただいております。あらかじめご了承いただき、まずはお気軽に下部フォームよりご相談ください。</p>
         </div>
 
         <div class="fish-grid">
+            <!-- イカ4種 -->
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="shiroika.png" alt="白イカ（シロイカ）" class="fish-img">
-                </div>
+                <div class="fish-img-wrap"><img src="image_eab5e3.png" alt="白イカ" class="fish-img"></div>
                 <div class="fish-info">
                     <h2 class="fish-name serif">白イカ（シロイカ）</h2>
                     <div class="fish-meta">標準和名：ケンサキイカ / 特徴：隠岐を代表する高級イカ。甘みともっちりした食感が特徴です。</div>
@@ -88,9 +84,7 @@
             </div>
 
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="shimame.png" alt="シマメ" class="fish-img">
-                </div>
+                <div class="fish-img-wrap"><img src="image_eab5e3.png" alt="シマメ" class="fish-img"></div>
                 <div class="fish-info">
                     <h2 class="fish-name serif">シマメ</h2>
                     <div class="fish-meta">標準和名：スルメイカ / 特徴：隠岐の方言でスルメイカを指します。特に冬獲れるものは「寒シマメ」と呼ばれ、漬け丼などが有名です。</div>
@@ -99,9 +93,7 @@
             </div>
 
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="tenashi.png" alt="テナシ" class="fish-img">
-                </div>
+                <div class="fish-img-wrap"><img src="image_eab5e3.png" alt="テナシ" class="fish-img"></div>
                 <div class="fish-info">
                     <h2 class="fish-name serif">テナシ</h2>
                     <div class="fish-meta">標準和名：ヤリイカ / 特徴：隠岐周辺ではこう呼ばれることがあり、初夏から夏にかけてよく獲れます。</div>
@@ -110,20 +102,28 @@
             </div>
 
             <div class="fish-card">
-                <div class="fish-img-wrap">
-                    <img src="aoriika.png" alt="アオリイカ" class="fish-img">
-                </div>
+                <div class="fish-img-wrap"><img src="image_eab5e3.png" alt="アオリイカ" class="fish-img"></div>
                 <div class="fish-info">
                     <h2 class="fish-name serif">アオリイカ</h2>
                     <div class="fish-meta">標準和名：アオリイカ / 特徴：イカの王様。肉厚で濃厚な旨味成分がトップクラスです。</div>
                     <p class="fish-desc">数あるイカの中でも、旨味と甘みをもたらすアミノ酸含有量が非常に高く「最高峰の味」と称されるアオリイカ。贅沢な厚みのある身は非常にもっちりとしており、お刺身、煮物、焼き物、どんな調理法にしてもイカ本来の圧倒的な深いコクを堪能いただけます。</p>
                 </div>
             </div>
+
+            <!-- 新規追加：タコ -->
+            <div class="fish-card">
+                <div class="fish-img-wrap"><img src="タコ.png" alt="マダコ" class="fish-img"></div>
+                <div class="fish-info">
+                    <h2 class="fish-name serif">マダコ（タコ）</h2>
+                    <div class="fish-meta">標準和名：マダコ / 特徴：隠岐の荒波と豊かなエサで育ち、吸盤の吸い付きが非常に強い天然タコ。</div>
+                    <p class="fish-desc">荒波でもまれることで、引き締まった身の「ぷりぷり」とした抜群の弾力が生まれます。茹で上げることでタコ本来の香ばしさと、噛みしめるほどに広がる濃厚な甘み・旨味が引き立ちます。お刺身、たこ飯、タコ唐揚げ、どれにしても至福の美味です。</p>
+                </div>
+            </div>
         </div>
 
         <div class="footer-note-btn">
-            <p style="margin-bottom: 20px; font-weight: bold; color: #0b2545;">いま獲れている旬のイカの種類や、発送時期のご相談はこちらから！</p>
-            <a href="index.html#contact" class="btn-contact serif">イカの水揚げ状況を相談する</a>
+            <p style="margin-bottom: 20px; font-weight: bold; color: #0b2545;">いま獲れている旬のイカ・タコの種類や、発送時期のご相談はこちらから！</p>
+            <a href="index.html#contact" class="btn-contact serif">水揚げ状況を相談・注文する</a>
         </div>
     </div>
 
